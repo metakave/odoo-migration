@@ -7,14 +7,26 @@
     padding: 0 var(--space-lg);
     transition: all var(--transition-normal);
     background: transparent;
+    color: #fff; /* Static for transparent over dark hero */
 }
 
 .headerScrolled {
-    background: rgba(15, 23, 42, 0.85);
+    background: var(--bg-page);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-main);
+    color: var(--text-main);
+}
+
+[data-theme='dark'] .headerScrolled {
+    background: rgba(15, 23, 42, 0.85);
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
 }
 
 .headerInner {
@@ -30,7 +42,7 @@
     font-family: var(--font-display);
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: currentColor;
     letter-spacing: -0.01em;
     white-space: nowrap;
 }
@@ -51,21 +63,22 @@
 .headerLink {
     font-size: 0.875rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
-    transition: color var(--transition-fast);
+    color: inherit;
+    opacity: 0.8;
+    transition: all var(--transition-fast);
     white-space: nowrap;
 }
 
 .headerLink:hover {
-    color: #fff;
+    opacity: 1;
+    color: var(--primary-400);
 }
 
 .headerCta {
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 1.25rem;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--primary-600);
     border-radius: var(--radius-full);
     font-size: 0.875rem;
     font-weight: 600;
@@ -75,8 +88,8 @@
 }
 
 .headerCta:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.35);
+    background: var(--primary-700);
+    transform: translateY(-1px);
 }
 
 .menuToggle {

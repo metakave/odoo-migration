@@ -88,6 +88,46 @@
   /* Layout */
   --max-width: 1200px;
   --header-height: 72px;
+
+  /* Semantic Colors - Default (Light Mode) */
+  --bg-page: #ffffff;
+  --bg-surface: var(--neutral-50);
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
+  
+  --text-main: var(--neutral-800);
+  --text-muted: var(--neutral-500);
+  --text-inverse: #ffffff;
+  --text-heading: var(--neutral-900);
+  
+  --border-subtle: var(--neutral-200);
+  --border-strong: var(--neutral-300);
+  
+  --shadow-main: var(--shadow-md);
+  --shadow-hover: var(--shadow-xl);
+
+  --gradient-main-bg: #fff;
+}
+
+/* --- Dark Mode Overrides --- */
+[data-theme='dark'] {
+  --bg-page: var(--neutral-950);
+  --bg-surface: var(--neutral-900);
+  --bg-card: var(--neutral-900);
+  --bg-card-hover: var(--neutral-800);
+  
+  --text-main: var(--neutral-200);
+  --text-muted: var(--neutral-400);
+  --text-inverse: var(--neutral-950);
+  --text-heading: #ffffff;
+  
+  --border-subtle: var(--neutral-800);
+  --border-strong: var(--neutral-700);
+  
+  --shadow-main: 0 4px 6px -1px rgba(0,0,0,0.3);
+  --shadow-hover: 0 20px 25px -5px rgba(0,0,0,0.4);
+
+  --gradient-card: linear-gradient(145deg, rgba(139,92,246,0.15), rgba(79,70,229,0.08));
 }
 
 /* --- CSS Reset & Base --- */
@@ -107,17 +147,18 @@ html {
 
 body {
   font-family: var(--font-primary);
-  color: var(--neutral-800);
-  background-color: #fff;
+  color: var(--text-main);
+  background-color: var(--bg-page);
   line-height: 1.7;
   overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.2;
   letter-spacing: -0.02em;
-  color: var(--neutral-900);
+  color: var(--text-heading);
 }
 
 a {
@@ -167,7 +208,7 @@ input, textarea, select {
 }
 
 .section-light {
-  background: var(--neutral-50);
+  background: var(--bg-surface);
 }
 
 /* --- Section Header --- */
@@ -184,6 +225,10 @@ input, textarea, select {
   padding: var(--space-xs) var(--space-md);
   background: var(--primary-50);
   color: var(--primary-700);
+[data-theme='dark'] .section-badge {
+  background: rgba(139,92,246,0.2);
+  color: var(--primary-300);
+}
   font-size: 0.8125rem;
   font-weight: 600;
   border-radius: var(--radius-full);
@@ -199,7 +244,7 @@ input, textarea, select {
 
 .section-subtitle {
   font-size: 1.125rem;
-  color: var(--neutral-500);
+  color: var(--text-muted);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -259,7 +304,11 @@ input, textarea, select {
 .btn-white {
   background: #fff;
   color: var(--primary-700);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-main);
+}
+[data-theme='dark'] .btn-white {
+  background: var(--neutral-800);
+  color: #fff;
 }
 
 .btn-white:hover {
@@ -283,8 +332,8 @@ input, textarea, select {
 
 /* --- Cards --- */
 .card {
-  background: #fff;
-  border: 1px solid var(--neutral-200);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-xl);
   padding: var(--space-2xl);
   transition: all var(--transition-normal);
@@ -316,7 +365,7 @@ input, textarea, select {
 }
 
 .card-text {
-  color: var(--neutral-500);
+  color: var(--text-muted);
   font-size: 0.9375rem;
   line-height: 1.7;
 }
@@ -363,18 +412,18 @@ input, textarea, select {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--neutral-700);
+  color: var(--text-main);
   margin-bottom: var(--space-xs);
 }
 
 .form-input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1.5px solid var(--neutral-200);
+  border: 1.5px solid var(--border-subtle);
   border-radius: var(--radius-md);
   font-size: 1rem;
-  color: var(--neutral-800);
-  background: #fff;
+  color: var(--text-main);
+  background: var(--bg-card);
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   outline: none;
 }

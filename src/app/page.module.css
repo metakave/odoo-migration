@@ -144,7 +144,7 @@
 
 /* --- PAIN POINTS SECTION --- */
 .painPoints {
-    background: var(--neutral-50);
+    background: var(--bg-surface);
     padding: var(--space-4xl) 0;
 }
 
@@ -155,8 +155,8 @@
 }
 
 .painCard {
-    background: #fff;
-    border: 1px solid var(--neutral-200);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
     transition: all var(--transition-normal);
@@ -189,7 +189,7 @@
 }
 
 .painText {
-    color: var(--neutral-500);
+    color: var(--text-muted);
     font-size: 0.9375rem;
 }
 
@@ -205,8 +205,8 @@
 }
 
 .serviceCard {
-    background: #fff;
-    border: 1px solid var(--neutral-200);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
     transition: all var(--transition-normal);
@@ -256,7 +256,7 @@
 }
 
 .serviceText {
-    color: var(--neutral-500);
+    color: var(--text-muted);
     font-size: 0.9375rem;
     line-height: 1.7;
 }
@@ -343,7 +343,7 @@
 /* --- SOCIAL PROOF — RESULTS / STATS --- */
 .results {
     padding: var(--space-4xl) 0;
-    background: var(--neutral-50);
+    background: var(--bg-surface);
 }
 
 .resultsGrid {
@@ -355,9 +355,9 @@
 .resultCard {
     text-align: center;
     padding: var(--space-2xl);
-    background: #fff;
+    background: var(--bg-card);
     border-radius: var(--radius-xl);
-    border: 1px solid var(--neutral-200);
+    border: 1px solid var(--border-subtle);
 }
 
 .resultValue {
@@ -388,8 +388,8 @@
 }
 
 .testimonialCard {
-    background: #fff;
-    border: 1px solid var(--neutral-200);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-2xl);
     position: relative;
@@ -452,7 +452,7 @@
 
 /* --- FAQ --- */
 .faq {
-    background: var(--neutral-50);
+    background: var(--bg-surface);
     padding: var(--space-4xl) 0;
 }
 
@@ -462,8 +462,8 @@
 }
 
 .faqItem {
-    background: #fff;
-    border: 1px solid var(--neutral-200);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-lg);
     margin-bottom: var(--space-md);
     overflow: hidden;
@@ -645,8 +645,8 @@
 }
 
 .visionCard {
-    background: #fff;
-    border: 1px solid var(--neutral-200);
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
     border-radius: var(--radius-xl);
     padding: var(--space-3xl);
     text-align: center;
@@ -655,7 +655,7 @@
 
 .visionCard:hover {
     border-color: var(--primary-200);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-hover);
     transform: translateY(-8px);
 }
 
@@ -672,7 +672,7 @@
 }
 
 .visionText {
-    color: var(--neutral-600);
+    color: var(--text-muted);
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -683,8 +683,8 @@
 }
 
 .warningBox {
-    background: linear-gradient(135deg, #fef2f2 0%, #fff1f2 100%);
-    border: 2px solid #fee2e2;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
     border-radius: var(--radius-2xl);
     padding: var(--space-3xl);
     text-align: center;
@@ -692,14 +692,19 @@
     margin: 0 auto;
 }
 
+[data-theme='dark'] .warningBox {
+    background: linear-gradient(135deg, #450a0a 0%, #1a0606 100%);
+    border-color: #7f1d1d;
+}
+
 .warningTitle {
-    color: #991b1b;
+    color: #ef4444;
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     margin-bottom: var(--space-md);
 }
 
 .warningText {
-    color: #b91c1c;
+    color: #f87171;
     font-size: 1.125rem;
     max-width: 700px;
     margin: 0 auto;

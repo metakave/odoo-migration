@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import ThemeSwitcher from "./ThemeSwitcher";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -38,11 +39,11 @@ export default function Header() {
                 <nav className={`${styles.headerNav} ${isMenuOpen ? styles.headerNavOpen : ""}`}>
                     <Link href="/#services" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Services</Link>
                     <Link href="/#process" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Process</Link>
-                    <Link href="/#results" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Results</Link>
                     <Link href="/case-studies" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Case Studies</Link>
-                    <Link href="/#testimonials" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Stories</Link>
-                    <Link href="/#faq" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>FAQ</Link>
-                    <Link href="/#contact" className={styles.headerCta} onClick={() => setIsMenuOpen(false)}>Free Assessment</Link>
+                    <div className={styles.headerActions}>
+                        <ThemeSwitcher />
+                        <Link href="/#contact" className={styles.headerCta} onClick={() => setIsMenuOpen(false)}>Free Assessment</Link>
+                    </div>
                 </nav>
             </div>
         </header>
