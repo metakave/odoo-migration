@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import styles from "./page.module.css";
 
 const faqs = [
@@ -28,48 +29,9 @@ const faqs = [
 
 export default function HomePage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
         <>
-            {/* ======= HEADER ======= */}
-            <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
-                <div className={styles.headerInner}>
-                    <div className={styles.headerLogo}>
-                        Odoo <span className={styles.headerLogoAccent}>Migration Services</span>
-                    </div>
-
-                    <button
-                        className={styles.menuToggle}
-                        onClick={toggleMenu}
-                        aria-label="Toggle Menu"
-                    >
-                        <span style={{ transform: isMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }}></span>
-                        <span style={{ opacity: isMenuOpen ? 0 : 1 }}></span>
-                        <span style={{ transform: isMenuOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none' }}></span>
-                    </button>
-
-                    <nav className={`${styles.headerNav} ${isMenuOpen ? styles.headerNavOpen : ""}`}>
-                        <a href="#services" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Services</a>
-                        <a href="#process" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Process</a>
-                        <a href="#results" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Results</a>
-                        <a href="#testimonials" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Stories</a>
-                        <a href="#faq" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>FAQ</a>
-                        <a href="#contact" className={styles.headerCta} onClick={() => setIsMenuOpen(false)}>Free Assessment</a>
-                    </nav>
-                </div>
-            </header>
             {/* ======= JSON-LD Structured Data ======= */}
             <script
                 type="application/ld+json"
@@ -104,17 +66,17 @@ export default function HomePage() {
                             Trusted by 200+ businesses worldwide
                         </div>
                         <h1 className={styles.heroTitle}>
-                            Seamless Odoo Migration.{" "}
-                            <span className={styles.heroHighlight}>Zero Downtime.</span>
+                            Seamless Odoo Migrations{" "}
+                            <span className={styles.heroHighlight}>Without the Downtime.</span>
                         </h1>
                         <p className={styles.heroSubtitle}>
-                            Upgrade to the latest Odoo version or migrate from any legacy ERP
-                            — with complete data integrity, custom module preservation, and
-                            expert support every step of the way.
+                            Upgrade to the latest Odoo version safely. We protect your data,
+                            update your custom modules, and ensure your business keeps
+                            running without missing a beat.
                         </p>
                         <div className={styles.heroCtas}>
                             <a href="#contact" className="btn btn-white btn-lg">
-                                Get Free Migration Assessment
+                                Request a Free Migration Audit
                                 <span className="btn-icon">→</span>
                             </a>
                         </div>
@@ -148,36 +110,29 @@ export default function HomePage() {
                     <div className="section-header">
                         <span className="section-badge">The Problem</span>
                         <h2 className="section-title">
-                            Running on an Outdated Odoo Version?
+                            Is an Outdated Odoo Version Holding Your Business Back?
                         </h2>
-                        <p className="section-subtitle">
-                            Staying on legacy systems costs you more than you think — in
-                            security risks, lost productivity, and missed opportunities.
-                        </p>
                     </div>
                     <div className={styles.painGrid}>
                         <div className={styles.painCard}>
-                            <div className={styles.painIcon}>🔓</div>
-                            <h3 className={styles.painTitle}>Security Vulnerabilities</h3>
+                            <div className={styles.painIcon}>⚠️</div>
+                            <h3 className={styles.painTitle}>The External Problem</h3>
                             <p className={styles.painText}>
-                                Older Odoo versions no longer receive security patches, leaving
-                                your business data exposed to growing threats.
+                                You&apos;re stuck on an unsupported version of Odoo, missing out on new features, and your custom modules are starting to break.
                             </p>
                         </div>
                         <div className={styles.painCard}>
-                            <div className={styles.painIcon}>⚡</div>
-                            <h3 className={styles.painTitle}>Performance Bottlenecks</h3>
+                            <div className={styles.painIcon}>😰</div>
+                            <h3 className={styles.painTitle}>The Internal Problem</h3>
                             <p className={styles.painText}>
-                                Slow load times, clunky UI, and inefficient workflows — legacy
-                                versions drag your team&apos;s productivity down daily.
+                                The thought of upgrading feels risky and overwhelming. You&apos;re terrified of data loss or halting your daily operations.
                             </p>
                         </div>
                         <div className={styles.painCard}>
-                            <div className={styles.painIcon}>🔌</div>
-                            <h3 className={styles.painTitle}>Integration Dead-Ends</h3>
+                            <div className={styles.painIcon}>⚖️</div>
+                            <h3 className={styles.painTitle}>The Philosophical Problem</h3>
                             <p className={styles.painText}>
-                                Modern third-party tools and APIs often don&apos;t support older
-                                Odoo versions, creating costly workarounds.
+                                Your ERP should accelerate your growth, not force you into stressful technical bottlenecks.
                             </p>
                         </div>
                     </div>
@@ -188,55 +143,44 @@ export default function HomePage() {
             <section className={styles.services} id="services">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">Our Solutions</span>
+                        <span className="section-badge">The Guide</span>
                         <h2 className="section-title">
-                            Comprehensive Odoo Migration Services
+                            We Make Complex Migrations Feel Effortless.
                         </h2>
                         <p className="section-subtitle">
-                            Whether you&apos;re upgrading versions or moving from a completely
-                            different ERP — we have you covered.
+                            We understand how critical your business data is. A botched migration isn&apos;t just an IT headache—it&apos;s a business crisis.
                         </p>
                     </div>
                     <div className={styles.serviceGrid}>
                         <div className={styles.serviceCard}>
-                            <div className={styles.serviceIcon}>🔄</div>
-                            <h3 className={styles.serviceTitle}>Version Upgrade</h3>
+                            <div className={styles.serviceIcon}>🏢</div>
+                            <h3 className={styles.serviceTitle}>Odoo Partner</h3>
                             <p className={styles.serviceText}>
-                                Upgrade from Odoo 12, 13, 14, 15, 16, or 17 to the latest Odoo
-                                18 with full data and module compatibility.
+                                As an official Odoo Partner, we have direct access to Odoo&apos;s internal migration tools and support.
                             </p>
-                            <ul className={styles.serviceList}>
-                                <li>Database schema migration</li>
-                                <li>Custom module re-engineering</li>
-                                <li>Theme & UI modernization</li>
-                            </ul>
                         </div>
                         <div className={styles.serviceCard}>
-                            <div className={styles.serviceIcon}>📊</div>
-                            <h3 className={styles.serviceTitle}>Data Migration</h3>
+                            <div className={styles.serviceIcon}>🎓</div>
+                            <h3 className={styles.serviceTitle}>Certified Experts</h3>
                             <p className={styles.serviceText}>
-                                Move your critical business data — customers, invoices,
-                                inventory, HR records — with field-level precision.
+                                Our team includes Odoo Certified Functional Consultants with deep expertise in Odoo&apos;s latest architecture.
                             </p>
-                            <ul className={styles.serviceList}>
-                                <li>Data mapping & cleansing</li>
-                                <li>Automated validation pipelines</li>
-                                <li>Historical data preservation</li>
-                            </ul>
                         </div>
                         <div className={styles.serviceCard}>
-                            <div className={styles.serviceIcon}>🌐</div>
-                            <h3 className={styles.serviceTitle}>ERP-to-Odoo Migration</h3>
+                            <div className={styles.serviceIcon}>🏆</div>
+                            <h3 className={styles.serviceTitle}>20+ Years Experience</h3>
                             <p className={styles.serviceText}>
-                                Transitioning from SAP, Oracle, NetSuite, or Microsoft Dynamics?
-                                We handle the full migration lifecycle.
+                                We bring two decades of hands-on IT and digital transformation experience to every project.
                             </p>
-                            <ul className={styles.serviceList}>
-                                <li>Business process alignment</li>
-                                <li>Multi-system data consolidation</li>
-                                <li>Go-live cutover planning</li>
-                            </ul>
                         </div>
+                    </div>
+                    <div className="text-center" style={{ marginTop: 'var(--space-2xl)' }}>
+                        <p style={{ maxWidth: '800px', margin: '0 auto var(--space-xl)', fontSize: '1.125rem', color: 'var(--neutral-600)' }}>
+                            As an official Odoo Partner with over two decades of IT experience, we have successfully guided businesses through complex database upgrades and custom module refactors.
+                        </p>
+                        <a href="#contact" className="btn btn-primary">
+                            Request a Free Migration Audit
+                        </a>
                     </div>
                 </div>
             </section>
@@ -245,81 +189,72 @@ export default function HomePage() {
             <section className={styles.process} id="process">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge section-dark">Our Process</span>
+                        <span className="section-badge section-dark">The Plan</span>
                         <h2 className="section-title" style={{ color: "#fff" }}>
-                            Your Migration Roadmap
+                            Your Path to the Latest Odoo Version in 3 Steps
                         </h2>
-                        <p
-                            className="section-subtitle"
-                            style={{ color: "rgba(255,255,255,0.6)" }}
-                        >
-                            A proven, battle-tested 4-step process that ensures a smooth
-                            transition with zero surprises.
-                        </p>
                     </div>
-                    <div className={styles.processSteps}>
+                    <div className={styles.processSteps} style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
                         <div className={styles.processStep}>
                             <div className={styles.processNumber}>01</div>
-                            <h3 className={styles.processStepTitle}>Discovery & Audit</h3>
+                            <h3 className={styles.processStepTitle}>The Migration Audit</h3>
                             <p className={styles.processStepText}>
-                                We analyze your current system, data structures, custom modules,
-                                and integrations to build a complete migration blueprint.
+                                We analyze your current database, identify custom apps, and map out a risk-free upgrade strategy.
                             </p>
                         </div>
                         <div className={styles.processStep}>
                             <div className={styles.processNumber}>02</div>
-                            <h3 className={styles.processStepTitle}>Migration Planning</h3>
+                            <h3 className={styles.processStepTitle}>The Test Run</h3>
                             <p className={styles.processStepText}>
-                                A detailed plan with timelines, risk mitigation strategies,
-                                rollback procedures, and resource allocation.
+                                We perform a complete test migration in a secure staging environment. You test everything while your live system keeps running.
                             </p>
                         </div>
                         <div className={styles.processStep}>
                             <div className={styles.processNumber}>03</div>
-                            <h3 className={styles.processStepTitle}>
-                                Execute & Validate
-                            </h3>
+                            <h3 className={styles.processStepTitle}>Seamless Go-Live</h3>
                             <p className={styles.processStepText}>
-                                We migrate your data in a staging environment, run automated
-                                tests, and validate every record before going live.
-                            </p>
-                        </div>
-                        <div className={styles.processStep}>
-                            <div className={styles.processNumber}>04</div>
-                            <h3 className={styles.processStepTitle}>Go-Live & Support</h3>
-                            <p className={styles.processStepText}>
-                                Seamless cutover with 90 days of post-migration support,
-                                including performance monitoring and user training.
+                                Once you approve, we execute the final upgrade over a weekend. You log in on Monday to a faster, fully updated Odoo.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* ============ RESULTS / SOCIAL PROOF ============ */}
-            <section className={styles.results} id="results">
+            {/* ============ SUCCESS (Vision) ============ */}
+            <section className={styles.results} id="vision">
                 <div className="container">
                     <div className="section-header">
-                        <span className="section-badge">Proven Results</span>
-                        <h2 className="section-title">Numbers That Speak for Themselves</h2>
+                        <span className="section-badge">The Success</span>
+                        <h2 className="section-title">Unlock the Full Power of Modern Odoo</h2>
                     </div>
-                    <div className={styles.resultsGrid}>
-                        <div className={styles.resultCard}>
-                            <div className={styles.resultValue}>200+</div>
-                            <div className={styles.resultLabel}>Migrations Delivered</div>
+                    <div className={styles.visionGrid}>
+                        <div className={styles.visionCard}>
+                            <div className={styles.visionIcon}>🛡️</div>
+                            <h3 className={styles.visionTitle}>Peace of Mind</h3>
+                            <p className={styles.visionText}>Knowing your data is secure and flawlessly migrated by experts who care about your continuity.</p>
                         </div>
-                        <div className={styles.resultCard}>
-                            <div className={styles.resultValue}>15+</div>
-                            <div className={styles.resultLabel}>Countries Served</div>
+                        <div className={styles.visionCard}>
+                            <div className={styles.visionIcon}>🚀</div>
+                            <h3 className={styles.visionTitle}>Increased Speed</h3>
+                            <p className={styles.visionText}>Leveraging the massive performance boosts and efficiency of the newest Odoo architecture.</p>
                         </div>
-                        <div className={styles.resultCard}>
-                            <div className={styles.resultValue}>99.9%</div>
-                            <div className={styles.resultLabel}>Data Accuracy</div>
+                        <div className={styles.visionCard}>
+                            <div className={styles.visionIcon}>💎</div>
+                            <h3 className={styles.visionTitle}>Future-Proofed</h3>
+                            <p className={styles.visionText}>Full access to the latest native apps, AI features, and official long-term support.</p>
                         </div>
-                        <div className={styles.resultCard}>
-                            <div className={styles.resultValue}>4.9★</div>
-                            <div className={styles.resultLabel}>Client Satisfaction</div>
-                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ============ FAILURE (Warning) ============ */}
+            <section className={styles.warningSection}>
+                <div className="container">
+                    <div className={styles.warningBox}>
+                        <h2 className={styles.warningTitle}>Don&apos;t Risk Your Business Continuity</h2>
+                        <p className={styles.warningText}>
+                            Delaying an upgrade leaves your system vulnerable to security risks, while attempting a DIY migration often leads to corrupted databases and broken custom code.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -413,12 +348,12 @@ export default function HomePage() {
                         Ready to Modernize Your Odoo?
                     </h2>
                     <p className={styles.ctaSubtitle}>
-                        Get a free, no-obligation migration assessment. Our experts will
+                        Get a free, no-obligation migration audit. Our experts will
                         analyze your current setup and provide a detailed roadmap.
                     </p>
                     <div className={styles.leadForm}>
                         <div className={styles.leadFormTitle}>
-                            Get Your Free Assessment
+                            Request a Free Migration Audit
                         </div>
                         <input
                             type="text"
@@ -460,7 +395,7 @@ export default function HomePage() {
                             <option value="not-sure">Not Sure Yet</option>
                         </select>
                         <button className={styles.leadFormBtn} type="button" id="lead-submit">
-                            Request Free Assessment →
+                            Request Free Migration Audit →
                         </button>
                         <p className={styles.leadFormTrust}>
                             🔒 Your information is secure. We never share your data.
@@ -469,17 +404,6 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* ============ FOOTER ============ */}
-            <footer className={styles.footer}>
-                <div className="container">
-                    <div className={styles.footerInner}>
-                        <div className={styles.footerBrand}>OdooMigrate</div>
-                        <div className={styles.footerCopy}>
-                            © {new Date().getFullYear()} OdooMigrate. All rights reserved.
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </>
     );
 }

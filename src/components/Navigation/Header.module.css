@@ -1,0 +1,123 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 var(--space-lg);
+    transition: all var(--transition-normal);
+    background: transparent;
+}
+
+.headerScrolled {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.headerInner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+}
+
+.headerLogo {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.headerLogoAccent {
+    background: linear-gradient(135deg, #c4b5fd, #a5f3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.headerNav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+.headerLink {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.headerLink:hover {
+    color: #fff;
+}
+
+.headerCta {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
+}
+
+.headerCta:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.menuToggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.menuToggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+    .menuToggle {
+        display: flex;
+    }
+
+    .headerNav {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(16px);
+        padding: var(--space-lg);
+        gap: var(--space-md);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .headerNavOpen {
+        display: flex;
+    }
+}
