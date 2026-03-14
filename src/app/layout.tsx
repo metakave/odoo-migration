@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+    title: "Odoo Migration Services — Upgrade to Odoo 18 Seamlessly",
+    description:
+        "Expert Odoo migration & upgrade services. Migrate from any ERP or older Odoo version with zero data loss. Get your free migration assessment today.",
+    keywords: [
+        "Odoo migration",
+        "Odoo upgrade",
+        "Odoo data migration",
+        "Odoo 18 migration",
+        "ERP migration services",
+        "Odoo migration consultant",
+        "SAP to Odoo migration",
+    ],
+    openGraph: {
+        title: "Odoo Migration Services — Upgrade to Odoo 18 Seamlessly",
+        description:
+            "Expert Odoo migration & upgrade services. Migrate from any ERP or older Odoo version with zero data loss.",
+        type: "website",
+        locale: "en_US",
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
+
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return (
+        <html lang="en">
+            <body>{children}</body>
+        </html>
+    );
+}
