@@ -16,6 +16,8 @@ The sections below walk through the most important changes from a business and t
 
 ## 1. AI becomes a core platform capability
 
+![Odoo 19 AI Features](/images/insights/odoo19/ai_core_platform.webp)
+
 ### How Odoo 17 handled AI
 
 In Odoo 17, AI capabilities were relatively narrow. They were mostly visible around OCR and document processing (for example, reading bills and expenses), and some light suggestions in accounting or reconciliation, but AI was not a unifying concept across the suite.
@@ -44,6 +46,8 @@ For a company running Odoo 17, these capabilities represent entirely new workflo
 
 ## 2. User interface and UX: from big redesign (v17) to daily‑workflow polish (v19)
 
+![Odoo 19 UI/UX improvements](/images/insights/odoo19/ui_ux_improvements.webp)
+
 ### Odoo 17’s UI baseline
 
 Odoo 17 delivered a major visual overhaul: a new design system, modernized menus, improved dropdowns, and a generally cleaner interface across most core apps. It was the “big design release,” replacing the v16 look‑and‑feel with a much more contemporary UI.
@@ -63,6 +67,8 @@ Some partners measure up to roughly 30 percent faster page loads in high‑traff
 From a functional‑consulting standpoint, these UX refinements reduce user training overhead and help with adoption, especially for non‑technical teams.
 
 ## 3. New apps: ESG and Equity
+
+![Odoo 19 ESG and Equity Apps](/images/insights/odoo19/esg_equity_apps.webp)
 
 ### ESG app: sustainability and compliance built‑in
 
@@ -93,6 +99,8 @@ For growing companies—especially startups and multi‑entity groups—this rep
 
 ## 4. Performance, caching, and scalability
 
+![Odoo 19 Performance](/images/insights/odoo19/performance_optimization.webp)
+
 ### Where Odoo 17 stands
 
 Odoo 17 already offers solid performance for SMB‑scale workloads, but it was primarily a UI and usability‑driven release rather than a performance‑driven one. Large databases and high‑volume operations work, but often require tuning and powerful infrastructure.
@@ -115,6 +123,8 @@ For businesses coming from Odoo 17, the practical impact is felt in:
 This is particularly relevant for large multi‑company databases or sites with heavy e‑commerce traffic.
 
 ## 5. CRM and Sales: smarter pipelines and quoting
+
+![Odoo 19 CRM and Sales](/images/insights/odoo19/crm_sales_smart.webp)
 
 ### CRM and Sales in Odoo 17
 
@@ -139,6 +149,8 @@ On the Sales side specifically, Odoo 19 strengthens quoting and order flows:
 Compared to Odoo 17, the net gain is a more proactive, AI‑assisted sales engine with fewer manual touches per deal.
 
 ## 6. Website and e‑commerce: faster, richer, and more SEO‑aware
+
+![Odoo 19 Website and E-commerce](/images/insights/odoo19/ecommerce_website.webp)
 
 ### Baseline in Odoo 17
 
@@ -166,6 +178,8 @@ For a company on Odoo 17, these changes are particularly valuable if online sale
 
 ## 7. Inventory, purchase, and supply chain
 
+![Odoo 19 Inventory and WMS](/images/insights/odoo19/inventory_wms_system.webp)
+
 ### Where Odoo 17 stands
 
 Odoo 17 already supports multi‑warehouse operations, routes, barcode scanning, and strong integration between Inventory, Purchase, and Manufacturing. For many SMEs, this is “good enough,” but there is room for better accuracy and flexibility.
@@ -184,6 +198,8 @@ Third‑party summaries of Odoo 19 also emphasize better WMS behavior, multi‑l
 Compared with Odoo 17, these enhancements reduce stock discrepancies, improve replenishment decisions, and make it easier to run complex warehouses without heavy customization.
 
 ## 8. Manufacturing, projects, and services
+
+![Odoo 19 Manufacturing and Projects](/images/insights/odoo19/manufacturing_projects_gantt.webp)
 
 ### Manufacturing and MRP
 
@@ -207,6 +223,8 @@ For service businesses running Odoo 17, these features reduce manual project adm
 
 ## 9. Accounting and finance: automation and compliance
 
+![Odoo 19 Accounting](/images/insights/odoo19/accounting_bank_reconciliation.webp)
+
 ### Accounting in Odoo 17
 
 Odoo 17 offers a complete accounting suite including invoicing, payments, bank reconciliation, and reporting that already covers many SMB needs. Light AI helps with document reading and matching, but much of the work is still manual.
@@ -224,6 +242,8 @@ Odoo 19 brings a new wave of automation and compliance‑oriented features to ac
 Compared to 17, this means less time spent on repetitive tasks and more confidence in compliance and audit trails. For growing organizations or those in regulated industries, this is a compelling reason to move beyond Odoo 17.
 
 ## 10. HR, payroll, and time off
+
+![Odoo 19 HR and Time Off](/images/insights/odoo19/hr_time_off_management.webp)
 
 ### HR in Odoo 17
 
@@ -243,6 +263,8 @@ These are features that simply are not available in Odoo 17 out of the box, and 
 
 ## 11. POS and retail
 
+![Odoo 19 POS](/images/insights/odoo19/pos_retail_interface.webp)
+
 ### POS in Odoo 17
 
 Odoo 17’s POS is already stable and integrated, with basic combos, payment terminal integrations, and restaurant features. However, its configuration and interface require more manual tuning.
@@ -261,6 +283,8 @@ If a business runs retail stores or restaurants on Odoo 17, these v19 upgrades d
 
 ## 12. Collaboration: Discuss, Live Chat, and knowledge sharing
 
+![Odoo 19 Collaboration and Chat](/images/insights/odoo19/collaboration_discuss_chat.webp)
+
 ### Collaboration in Odoo 17
 
 Odoo 17 provides Discuss, channels, and Live Chat, but the experience is more basic and often supplemented with external tools. Context switching is frequent and internal communication can become noisy.
@@ -278,6 +302,8 @@ These changes might seem small individually, but together they make Odoo 19 much
 
 ## 13. Studio, customization, and reporting
 
+![Odoo 19 Studio with AI](/images/insights/odoo19/studio_ai_customization.webp)
+
 ### Customization in Odoo 17
 
 Odoo 17 already includes Studio for low‑code customization, allowing users to add fields, automate flows, and design basic reports. However, AI support is nonexistent and designing complex documents can still be time‑consuming.
@@ -294,6 +320,8 @@ In Odoo 19, Studio and the reporting stack advance in two key ways:
 For organizations on Odoo 17, the cumulative impact is that far more customization work can be done by functional consultants and power users rather than developers.
 
 ## 14. Security, integrations, and future‑proofing
+
+![Odoo 19 Security and Integrations](/images/insights/odoo19/security_integrations.webp)
 
 ### Security and integrations in Odoo 17
 
