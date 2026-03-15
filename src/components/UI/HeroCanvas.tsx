@@ -45,7 +45,7 @@ export default function HeroCanvas() {
 
         let animationFrameId: number;
         
-        class CodeStream {
+        class TypingStream {
             text: string;
             x: number;
             y: number;
@@ -53,45 +53,65 @@ export default function HeroCanvas() {
             opacity: number;
             fontSize: number;
             color: string;
+            charsTyped: number;
+            delay: number;
             
-            constructor(width: number, height: number, initializeRandomly: boolean = false) {
+            constructor(width: number, height: number, initialDelay: number = 0) {
+                this.reset(width, height, initialDelay);
+            }
+            
+            reset(width: number, height: number, initialDelay: number = 0) {
                 this.text = odooCodeSnippets[Math.floor(Math.random() * odooCodeSnippets.length)];
-                this.fontSize = Math.floor(Math.random() * 8 + 12); // 12px to 20px
-                this.x = Math.random() * width;
-                this.y = initializeRandomly ? Math.random() * height : -50;
-                this.speed = Math.random() * 1.2 + 0.3; // 0.3 to 1.5 falling speed
-                this.opacity = Math.random() * 0.2 + 0.05; // 0.05 to 0.25 opacity (subtle, background layer)
+                this.fontSize = Math.floor(Math.random() * 6 + 12); // 12px to 18px
+                this.x = Math.random() * (width * 0.8); // Mostly start on screen
+                this.y = Math.random() * height;
+                this.speed = Math.random() * 1.5 + 0.8; // 0.8 to 2.3 characters per frame (fast typing)
+                this.opacity = Math.random() * 0.2 + 0.08; // 0.08 to 0.28 opacity
                 
-                // Mix of Theme Primary (#a855f7) and Accent Cyan (#06b6d4)
-                const colors = [
-                    '168, 85, 247', // Light Purple
-                    '6, 182, 212',  // Cyan
-                    '147, 51, 234', // Deep Purple
-                    '16, 185, 129'  // Matrix/Tech Green
+                // Deep gray variations
+                const grays = [
+                    '100, 100, 100',
+                    '130, 130, 130',
+                    '160, 160, 160',
+                    '80, 80, 80'
                 ];
-                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.color = grays[Math.floor(Math.random() * grays.length)];
+                this.charsTyped = 0;
+                this.delay = initialDelay;
             }
             
             update(width: number, height: number) {
-                this.y += this.speed;
-                if (this.y > height + 50) {
-                     // Reset at top when off screen
-                     this.text = odooCodeSnippets[Math.floor(Math.random() * odooCodeSnippets.length)];
-                     this.fontSize = Math.floor(Math.random() * 8 + 12);
-                     this.x = Math.random() * width;
-                     this.y = -50;
-                     this.speed = Math.random() * 1.2 + 0.3;
+                if (this.delay > 0) {
+                    this.delay -= 1;
+                    return;
+                }
+                
+                this.charsTyped += this.speed;
+                
+                // Reset after it finishes typing plus a random pause
+                if (this.charsTyped > this.text.length + (Math.random() * 60 + 20)) {
+                    this.reset(width, height, Math.floor(Math.random() * 30));
                 }
             }
             
             draw(ctx: CanvasRenderingContext2D) {
+                if (this.delay > 0 || this.charsTyped <= 0) return;
+                
                 ctx.font = `500 ${this.fontSize}px "Space Grotesk", monospace`;
                 ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
-                ctx.fillText(this.text, this.x, this.y);
+                
+                const visibleText = this.text.substring(0, Math.floor(this.charsTyped));
+                ctx.fillText(visibleText, this.x, this.y);
+                
+                // Draw a typing cursor at the end
+                if (Math.floor(this.charsTyped) < this.text.length && Math.random() > 0.1) {
+                    const textWidth = ctx.measureText(visibleText).width;
+                    ctx.fillRect(this.x + textWidth + 2, this.y - this.fontSize * 0.7, this.fontSize * 0.5, this.fontSize);
+                }
             }
         }
 
-        const streams: CodeStream[] = [];
+        const streams: TypingStream[] = [];
 
         const resize = () => {
              const parent = canvas.parentElement;
@@ -104,15 +124,15 @@ export default function HeroCanvas() {
         const init = () => {
             resize();
             streams.length = 0;
-            // Determine number of streams based on screen size to prevent clutter while keeping it dense
-            const count = Math.min(80, Math.floor((canvas.width * canvas.height) / 15000));
+            // Higher density
+            const count = Math.min(150, Math.floor((canvas.width * canvas.height) / 7000));
             for (let i = 0; i < count; i++) {
-                streams.push(new CodeStream(canvas.width, canvas.height, true));
+                // Stagger the initial delays so they don't all start at once
+                streams.push(new TypingStream(canvas.width, canvas.height, Math.floor(Math.random() * 200)));
             }
         };
 
         const animate = () => {
-            // Use clearRect for true transparency without ghosting over gradient behind it
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
             for (let i = 0; i < streams.length; i++) {
