@@ -14,6 +14,7 @@ export default function Footer() {
                         <Link href="/" className={styles.footerLink}>Home</Link>
                         <Link href="/case-studies" className={styles.footerLink}>Case Studies</Link>
                         <Link href="/insights" className={styles.footerLink}>Insights</Link>
+                        <Link href="/contact" className={styles.footerLink}>Contact Us</Link>
                         <Link href="/faq" className={styles.footerLink}>FAQ</Link>
                     </nav>
 
