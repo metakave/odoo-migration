@@ -23,7 +23,7 @@ export default function Header() {
         <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
             <div className={styles.headerInner}>
                 <Link href="/" className={styles.headerLogo}>
-                    Odoo <span className={styles.headerLogoAccent}>Migration Services</span>
+                    Odoo <span className={styles.headerLogoAccent}>Upgrade Service</span>
                 </Link>
 
                 <button

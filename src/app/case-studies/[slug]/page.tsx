@@ -82,7 +82,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!post) return {};
 
     return {
-        title: `${post.title} | Case Studies | Odoo Migration Services`,
+        title: `${post.title} | Case Studies | Odoo Upgrade Service`,
         description: post.summary,
     };
 }

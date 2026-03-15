@@ -3,7 +3,7 @@ import { caseStudies } from "@/data/case-studies";
 import styles from "./case-studies.module.css";
 
 export const metadata = {
-    title: "Case Studies | Odoo Migration Services",
+    title: "Case Studies | Odoo Upgrade Service",
     description: "Explore our successful Odoo migration and upgrade projects across various industries.",
 };
 

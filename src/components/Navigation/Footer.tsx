@@ -5,9 +5,9 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className="container">
                 <div className={styles.footerInner}>
-                    <div className={styles.footerBrand}>OdooMigrate</div>
+                    <div className={styles.footerBrand}>Odoo Upgrade Service</div>
                     <div className={styles.footerCopy}>
-                        © {new Date().getFullYear()} OdooMigrate. All rights reserved.
+                        © {new Date().getFullYear()} Odoo Upgrade Service. All rights reserved.
                     </div>
                 </div>
             </div>
