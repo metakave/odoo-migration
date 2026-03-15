@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { caseStudies } from "@/data/case-studies";
 import styles from "./case-studies.module.css";
 
@@ -26,9 +27,14 @@ export default function CaseStudiesPage() {
                     {/* Featured Post */}
                     {featuredPost && (
                         <div className={styles.featuredCard}>
-                            <div className={styles.featuredImage}>
-                                {/* Using a div with background color/placeholder until actual images are provided */}
-                            </div>
+                            <Image 
+                                src={featuredPost.image} 
+                                alt={featuredPost.title} 
+                                width={800} 
+                                height={600} 
+                                className={styles.featuredImage} 
+                            />
+
                             <div className={styles.featuredContent}>
                                 <span className={styles.badge}>{featuredPost.category}</span>
                                 <h2 className={styles.featuredTitle}>{featuredPost.title}</h2>
@@ -44,9 +50,14 @@ export default function CaseStudiesPage() {
                     {/* Remaining Posts */}
                     {remainingPosts.map((post) => (
                         <div key={post.id} className={styles.regularCard}>
-                            <div className={styles.cardImage}>
-                                {/* Placeholder */}
-                            </div>
+                            <Image 
+                                src={post.image} 
+                                alt={post.title} 
+                                width={600} 
+                                height={337} 
+                                className={styles.cardImage} 
+                            />
+
                             <div className={styles.cardContent}>
                                 <span className={styles.badge}>{post.category}</span>
                                 <h3 className={styles.title}>{post.title}</h3>

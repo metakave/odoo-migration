@@ -15,7 +15,7 @@ export const caseStudies: CaseStudy[] = [
         summary: "How a billion-dollar retail chain successfully transitioned their entire operations from a legacy SAP system to Odoo 18, improving efficiency by 35%.",
         date: "March 10, 2024",
         category: "Retail",
-        image: "/images/case-studies/retail-migration.jpg",
+        image: "/images/case-studies/retail-migration.webp",
         slug: "global-retailer-odoo-18-migration"
     },
     {
@@ -24,7 +24,7 @@ export const caseStudies: CaseStudy[] = [
         summary: "Automating shop floor operations and real-time inventory tracking for a leading automotive parts manufacturer.",
         date: "February 28, 2024",
         category: "Manufacturing",
-        image: "/images/case-studies/manufacturing-boost.jpg",
+        image: "/images/case-studies/manufacturing-boost.webp",
         slug: "manufacturing-odoo-upgrade"
     },
     {
@@ -33,7 +33,7 @@ export const caseStudies: CaseStudy[] = [
         summary: "Synchronizing multi-channel sales and logistics for a rapidly growing fashion brand using Odoo's advanced API.",
         date: "February 15, 2024",
         category: "E-commerce",
-        image: "/images/case-studies/ecommerce-scaling.jpg",
+        image: "/images/case-studies/ecommerce-scaling.webp",
         slug: "ecommerce-odoo-integration"
     },
     {
@@ -42,7 +42,7 @@ export const caseStudies: CaseStudy[] = [
         summary: "Replacing disparate accounting tools with a unified Odoo Financials suite for a boutique investment firm.",
         date: "January 20, 2024",
         category: "Finance",
-        image: "/images/case-studies/finance-modernization.jpg",
+        image: "/images/case-studies/finance-modernization.webp",
         slug: "finance-services-odoo"
     }
 ];

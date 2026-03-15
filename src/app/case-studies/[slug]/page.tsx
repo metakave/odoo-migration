@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { caseStudies } from "@/data/case-studies";
 import styles from "./case-study-detail.module.css";
@@ -32,9 +33,13 @@ export default function CaseStudyDetail({ params }: { params: { slug: string } }
                         ← Back to Case Studies
                     </Link>
 
-                    <div className={styles.featuredImagePlaceholder}>
-                        {/* Image Placeholder */}
-                    </div>
+                    <Image 
+                        src={post.image} 
+                        alt={post.title} 
+                        width={1200} 
+                        height={514} 
+                        className={styles.featuredImage} 
+                    />
 
                     <article className={styles.articleContent}>
                         <p className="lead">
