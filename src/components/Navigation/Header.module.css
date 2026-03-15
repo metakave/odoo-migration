@@ -7,7 +7,7 @@
     padding: 0 var(--space-lg);
     transition: all var(--transition-normal);
     background: transparent;
-    color: #fff; /* Static for transparent over dark hero */
+    color: #fff; /* Default: White text over dark hero images */
 }
 
 .headerScrolled {
@@ -16,7 +16,7 @@
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-subtle);
     box-shadow: var(--shadow-main);
-    color: var(--text-main);
+    color: var(--text-main); /* This forces text and logos to switch to dark mode in light-themed pages once scrolled */
 }
 
 [data-theme='dark'] .headerScrolled {
@@ -106,7 +106,7 @@
     display: block;
     width: 24px;
     height: 2px;
-    background: #fff;
+    background: currentColor; /* Inherits from .header or .headerScrolled */
     border-radius: 2px;
     transition: all var(--transition-fast);
 }
@@ -123,11 +123,12 @@
         left: 0;
         right: 0;
         flex-direction: column;
-        background: rgba(15, 23, 42, 0.95);
+        background: var(--bg-page);
         backdrop-filter: blur(16px);
         padding: var(--space-lg);
         gap: var(--space-md);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid var(--border-subtle);
+        color: var(--text-main);
     }
 
     .headerNavOpen {
