@@ -83,12 +83,12 @@ export default function ContactPage() {
                                     <label htmlFor="currentVersion">Current Odoo Version</label>
                                     <select id="currentVersion" className={styles.formSelect} required>
                                         <option value="">Select version...</option>
+                                        <option value="18">Odoo 18</option>
                                         <option value="17">Odoo 17</option>
                                         <option value="16">Odoo 16</option>
                                         <option value="15">Odoo 15</option>
                                         <option value="14">Odoo 14</option>
-                                        <option value="13">Odoo 13</option>
-                                        <option value="older">Odoo 12 or older</option>
+                                        <option value="older">Odoo 13 or older</option>
                                         <option value="other">Other ERP (SAP, Oracle, etc.)</option>
                                     </select>
                                 </div>
@@ -97,7 +97,8 @@ export default function ContactPage() {
                                     <label htmlFor="targetVersion">Target Version</label>
                                     <select id="targetVersion" className={styles.formSelect} required>
                                         <option value="">Select version...</option>
-                                        <option value="18">Odoo 18 (Latest)</option>
+                                        <option value="19">Odoo 19 (Latest)</option>
+                                        <option value="18">Odoo 18</option>
                                         <option value="17">Odoo 17</option>
                                         <option value="undecided">Not sure yet</option>
                                     </select>
