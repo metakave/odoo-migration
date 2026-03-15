@@ -26,7 +26,7 @@ export default function CaseStudiesPage() {
                 <div className={styles.grid}>
                     {/* Featured Post */}
                     {featuredPost && (
-                        <div className={styles.featuredCard}>
+                        <Link href={`/case-studies/${featuredPost.slug}`} className={styles.featuredCard}>
                             <Image 
                                 src={featuredPost.image} 
                                 alt={featuredPost.title} 
@@ -40,16 +40,16 @@ export default function CaseStudiesPage() {
                                 <h2 className={styles.featuredTitle}>{featuredPost.title}</h2>
                                 <p className={styles.excerpt}>{featuredPost.summary}</p>
                                 <div className={styles.meta}>{featuredPost.date}</div>
-                                <Link href={`/case-studies/${featuredPost.slug}`} className={styles.readMore}>
+                                <span className={styles.readMore}>
                                     Read Full Story <span>→</span>
-                                </Link>
+                                </span>
                             </div>
-                        </div>
+                        </Link>
                     )}
 
                     {/* Remaining Posts */}
                     {remainingPosts.map((post) => (
-                        <div key={post.id} className={styles.regularCard}>
+                        <Link href={`/case-studies/${post.slug}`} key={post.id} className={styles.regularCard}>
                             <Image 
                                 src={post.image} 
                                 alt={post.title} 
@@ -63,11 +63,11 @@ export default function CaseStudiesPage() {
                                 <h3 className={styles.title}>{post.title}</h3>
                                 <p className={styles.excerpt}>{post.summary}</p>
                                 <div className={styles.meta}>{post.date}</div>
-                                <Link href={`/case-studies/${post.slug}`} className={styles.readMore}>
+                                <span className={styles.readMore}>
                                     View Details <span>→</span>
-                                </Link>
+                                </span>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

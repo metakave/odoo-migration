@@ -27,6 +27,8 @@
     border: 1px solid var(--border-subtle);
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     margin-bottom: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
 }
 
 .featuredCard:hover {
@@ -57,6 +59,8 @@
     transition: all var(--transition-normal);
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
 .regularCard:hover {
@@ -129,7 +133,8 @@
     transition: gap var(--transition-fast);
 }
 
-.readMore:hover {
+.featuredCard:hover .readMore,
+.regularCard:hover .readMore {
     gap: var(--space-sm);
 }
 

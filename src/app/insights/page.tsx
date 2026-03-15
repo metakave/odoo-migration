@@ -22,7 +22,7 @@ export default function InsightsPage() {
 
                 <div className={styles.grid}>
                     {insights.map((post) => (
-                        <article key={post.id} className={styles.card}>
+                        <Link href={`/insights/${post.slug}`} key={post.id} className={styles.card}>
                             <Image 
                                 src={post.image} 
                                 alt={post.title} 
@@ -37,14 +37,16 @@ export default function InsightsPage() {
                                 
                                 <div className={styles.meta}>
                                     <span>{post.date}</span>
-                                    <span className={styles.readTimeTag}>{post.readTime}</span>
                                 </div>
                                 
-                                <Link href={`/insights/${post.slug}`} className={styles.readMore}>
-                                    Read Insight <span>→</span>
-                                </Link>
+                                <div className={styles.cardFooter}>
+                                    <span className={styles.readTimeTag}>{post.readTime}</span>
+                                    <span className={styles.readMore}>
+                                        Read Insight <span>→</span>
+                                    </span>
+                                </div>
                             </div>
-                        </article>
+                        </Link>
                     ))}
                 </div>
             </div>
