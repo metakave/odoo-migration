@@ -78,14 +78,54 @@ export default function ContactPage() {
                                 />
                             </div>
 
-                            <div className={styles.formGroup}>
-                                <label htmlFor="system">Current System (Optional)</label>
-                                <input 
-                                    type="text" 
-                                    id="system" 
-                                    className={styles.formInput} 
-                                    placeholder="e.g. Odoo 14, Oracle EBS, SAP"
-                                />
+                            <div className={styles.formRow}>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="currentVersion">Current Odoo Version</label>
+                                    <select id="currentVersion" className={styles.formSelect} required>
+                                        <option value="">Select version...</option>
+                                        <option value="17">Odoo 17</option>
+                                        <option value="16">Odoo 16</option>
+                                        <option value="15">Odoo 15</option>
+                                        <option value="14">Odoo 14</option>
+                                        <option value="13">Odoo 13</option>
+                                        <option value="older">Odoo 12 or older</option>
+                                        <option value="other">Other ERP (SAP, Oracle, etc.)</option>
+                                    </select>
+                                </div>
+
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="targetVersion">Target Version</label>
+                                    <select id="targetVersion" className={styles.formSelect} required>
+                                        <option value="">Select version...</option>
+                                        <option value="18">Odoo 18 (Latest)</option>
+                                        <option value="17">Odoo 17</option>
+                                        <option value="undecided">Not sure yet</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className={styles.formRow}>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="edition">Odoo Edition</label>
+                                    <select id="edition" className={styles.formSelect} required>
+                                        <option value="">Select edition...</option>
+                                        <option value="enterprise">Enterprise Edition</option>
+                                        <option value="community">Community Edition</option>
+                                        <option value="sh">Odoo.sh</option>
+                                        <option value="online">Odoo Online</option>
+                                    </select>
+                                </div>
+
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="timeline">Required Timeline</label>
+                                    <select id="timeline" className={styles.formSelect} required>
+                                        <option value="">Select timeline...</option>
+                                        <option value="asap">ASAP (Within 1 month)</option>
+                                        <option value="1-3months">1-3 Months</option>
+                                        <option value="3-6months">3-6 Months</option>
+                                        <option value="6months+">6+ Months / Exploring</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div className={styles.formGroup}>
@@ -94,7 +134,7 @@ export default function ContactPage() {
                                     id="message" 
                                     required 
                                     className={styles.formTextarea} 
-                                    placeholder="Tell us about your business size, required modules, and timeline..."
+                                    placeholder="Tell us about your business size, required modules, and any custom developments..."
                                 ></textarea>
                             </div>
 
