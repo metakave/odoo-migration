@@ -6,6 +6,7 @@ export interface CaseStudy {
     category: string;
     image: string;
     slug: string;
+    markdownFile?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -44,5 +45,15 @@ export const caseStudies: CaseStudy[] = [
         category: "Finance",
         image: "/images/case-studies/finance-modernization.webp",
         slug: "finance-services-odoo"
+    },
+    {
+        id: "5",
+        title: "From Oracle EBS to Odoo: 90% Cost Reduction",
+        summary: "How a Saudi Arabian organization successfully migrated from a legacy Oracle-based ERP to Odoo, slashing licensing and maintenance fees by 90% while improving agility.",
+        date: "15 Mar 2026",
+        category: "Enterprise",
+        image: "/images/case-studies/oracle-migration.webp",
+        slug: "oracle-ebs-to-odoo-migration",
+        markdownFile: "public/oracle-odoo-md"
     }
 ];
