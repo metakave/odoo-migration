@@ -55,13 +55,15 @@ export default async function InsightDetail({ params }: { params: { slug: string
                         ← Back to Insights
                     </Link>
 
-                    <Image 
-                        src={post.image} 
-                        alt={post.title} 
-                        width={1200} 
-                        height={675} 
-                        className={styles.featuredImage} 
-                    />
+                    {post.image ? (
+                        <Image 
+                            src={post.image} 
+                            alt={post.title} 
+                            width={1200} 
+                            height={675} 
+                            className={styles.featuredImage} 
+                        />
+                    ) : null}
 
                     <article className={styles.articleContent}>
                         {contentHtml ? (

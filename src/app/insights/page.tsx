@@ -23,13 +23,17 @@ export default function InsightsPage() {
                 <div className={styles.grid}>
                     {insights.map((post) => (
                         <Link href={`/insights/${post.slug}`} key={post.id} className={styles.card}>
-                            <Image 
-                                src={post.image} 
-                                alt={post.title} 
-                                width={600} 
-                                height={337} 
-                                className={styles.cardImage} 
-                            />
+                            {post.image ? (
+                                <Image 
+                                    src={post.image} 
+                                    alt={post.title} 
+                                    width={600} 
+                                    height={337} 
+                                    className={styles.cardImage} 
+                                />
+                            ) : (
+                                <div className={styles.cardImagePlaceholder} style={{ width: '100%', height: '337px', backgroundColor: '#f0f0f0' }}></div>
+                            )}
                             <div className={styles.cardContent}>
                                 <span className={styles.badge}>{post.category}</span>
                                 <h2 className={styles.title}>{post.title}</h2>

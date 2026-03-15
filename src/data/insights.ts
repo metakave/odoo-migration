@@ -57,5 +57,17 @@ export const insights: Insight[] = [
         image: "/images/insights/odoo_migration_2026.webp",
         readTime: "9 Min Read",
         markdownFile: "public/comprehensive-guide.md"
+    },
+    {
+        id: "5",
+        title: "Odoo 19 vs Odoo 17: The Most Important New Features and Updates Explained",
+        slug: "odoo-19-vs-odoo-17-new-features-and-updates",
+        summary: "Odoo 19 is not just a cosmetic update over Odoo 17; it is a release where AI, automation, and compliance become first‑class citizens across the suite.",
+        date: "15 Mar 2026",
+        author: "Tech Strategy Team",
+        category: "Feature",
+        image: "/images/insights/odoo-feature.webp",
+        readTime: "8 Min Read",
+        markdownFile: "public/odoo-17to19.md"
     }
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
