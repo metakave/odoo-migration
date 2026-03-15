@@ -148,6 +148,20 @@
     padding: var(--space-4xl) 0;
 }
 
+.painSectionTitle {
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme='dark'] .painSectionTitle {
+    background: linear-gradient(135deg, var(--primary-300), var(--primary-400));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .painGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

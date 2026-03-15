@@ -5,7 +5,7 @@ import WhatsAppWidget from "@/components/UI/WhatsAppWidget";
 import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Odoo Upgrade Service — Upgrade to Odoo 18 Seamlessly",
+    title: "Odoo Upgrade Service - Migration to Latest Odoo Version",
     description:
         "Expert Odoo migration & upgrade services. Migrate from any ERP or older Odoo version with zero data loss. Get your free migration assessment today.",
     keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         "SAP to Odoo migration",
     ],
     openGraph: {
-        title: "Odoo Upgrade Service — Upgrade to Odoo 18 Seamlessly",
+        title: "Odoo Upgrade Service - Migration to Latest Odoo Version",
         description:
             "Expert Odoo migration & upgrade services. Migrate from any ERP or older Odoo version with zero data loss.",
         type: "website",

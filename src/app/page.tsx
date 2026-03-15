@@ -109,7 +109,7 @@ export default function HomePage() {
                 <div className="container">
                     <div className="section-header">
                         <span className="section-badge">The Problem</span>
-                        <h2 className="section-title">
+                        <h2 className={`section-title ${styles.painSectionTitle}`}>
                             Is an Outdated Odoo Version Holding Your Business Back?
                         </h2>
                     </div>
