@@ -1,0 +1,157 @@
+.ctaContainer {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+.ctaCard {
+    background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg-primary) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+[data-theme='dark'] .ctaCard {
+    background: linear-gradient(135deg, #1A1F2C 0%, #11141D 100%);
+    border-color: #2D3748;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ctaCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--success-color), var(--primary-color));
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 100% 0; }
+    50% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+.ctaCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .ctaCard:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.ctaContent {
+    max-width: 800px;
+    margin-bottom: 2.5rem;
+}
+
+.ctaTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    letter-spacing: -0.02em;
+}
+
+.ctaDescription {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.ctaActions {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btnPrimary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.btnPrimary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(113, 75, 103, 0.25);
+    color: white; /* Ensure text stays white */
+}
+
+.btnWhatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: var(--success-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    border: 2px solid var(--success-color);
+    transition: all 0.2s ease;
+}
+
+.btnWhatsapp:hover {
+    background-color: var(--success-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.btnWhatsapp:hover .whatsappIcon {
+    fill: white;
+}
+
+.whatsappIcon {
+    width: 20px;
+    height: 20px;
+    fill: var(--success-color);
+    transition: fill 0.2s ease;
+}
+
+
+@media (max-width: 768px) {
+    .ctaCard {
+        padding: 2rem 1.5rem;
+    }
+
+    .ctaTitle {
+        font-size: 1.75rem;
+    }
+
+    .ctaActions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .btnPrimary, .btnWhatsapp {
+        width: 100%;
+    }
+}

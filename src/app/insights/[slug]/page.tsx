@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { insights } from "@/data/insights";
 import ProgressBar from "@/components/UI/ProgressBar";
+import InsightCTA from "@/components/UI/InsightCTA";
 import styles from "./insight-detail.module.css";
 import fs from "fs";
 import path from "path";
@@ -99,6 +100,8 @@ export default async function InsightDetail({ params }: { params: { slug: string
                             </>
                         )}
                     </article>
+
+                    <InsightCTA />
                 </div>
             </div>
         </main>
