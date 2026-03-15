@@ -46,15 +46,15 @@ export default function HeroCanvas() {
         let animationFrameId: number;
         
         class TypingStream {
-            text: string;
-            x: number;
-            y: number;
-            speed: number;
-            opacity: number;
-            fontSize: number;
-            color: string;
-            charsTyped: number;
-            delay: number;
+            text!: string;
+            x!: number;
+            y!: number;
+            speed!: number;
+            opacity!: number;
+            fontSize!: number;
+            color!: string;
+            charsTyped!: number;
+            delay!: number;
             
             constructor(width: number, height: number, initialDelay: number = 0) {
                 this.reset(width, height, initialDelay);
