@@ -482,7 +482,7 @@
     justify-content: space-between;
     font-size: 1rem;
     font-weight: 600;
-    color: var(--neutral-800);
+    color: var(--text-heading);
     text-align: left;
     cursor: pointer;
     background: transparent;
@@ -491,7 +491,7 @@
 }
 
 .faqQuestion:hover {
-    color: var(--primary-700);
+    color: var(--primary-500);
 }
 
 .faqToggle {
