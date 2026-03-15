@@ -22,3 +22,32 @@
 .footerCopy {
     font-size: 0.8125rem;
 }
+
+.footerNav {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: center;
+}
+
+.footerLink {
+    color: var(--neutral-400);
+    font-size: 0.9375rem;
+    transition: color var(--transition-fast);
+}
+
+.footerLink:hover {
+    color: var(--primary-400);
+}
+
+@media (max-width: 640px) {
+    .footerInner {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+    
+    .footerNav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-md);
+    }
+}
