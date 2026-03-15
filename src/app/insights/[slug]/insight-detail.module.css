@@ -80,9 +80,21 @@
     color: var(--text-main);
 }
 
+.articleContent h1 {
+    font-size: 2.25rem;
+    margin: var(--space-2xl) 0 var(--space-lg);
+    color: var(--text-heading);
+}
+
 .articleContent h2 {
     font-size: 1.75rem;
     margin: var(--space-2xl) 0 var(--space-md);
+    color: var(--text-heading);
+}
+
+.articleContent h3 {
+    font-size: 1.35rem;
+    margin: var(--space-xl) 0 var(--space-sm);
     color: var(--text-heading);
 }
 

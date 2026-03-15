@@ -9,6 +9,7 @@ export interface Insight {
     category: string;
     image: string;
     readTime: string;
+    markdownFile?: string;
 }
 
 export const insights: Insight[] = [
@@ -44,5 +45,17 @@ export const insights: Insight[] = [
         category: "Technical Guide",
         image: "/images/insights/data-migration.webp",
         readTime: "5 Min Read"
+    },
+    {
+        id: "4",
+        title: "A Comprehensive Guide for Odoo Version Migration in 2026",
+        slug: "comprehensive-guide-odoo-version-migration-2026",
+        summary: "Odoo version migration is no longer an optional “IT project”—it is a strategic move to unlock new features, close security gaps, and future‑proof your business.",
+        date: "March 15, 2024",
+        author: "Migration Strategy Team",
+        category: "Technical Guide",
+        image: "/images/insights/odoo_migration_2026.webp",
+        readTime: "9 Min Read",
+        markdownFile: "public/comprehensive-guide.md"
     }
 ];
