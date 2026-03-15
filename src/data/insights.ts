@@ -58,4 +58,4 @@ export const insights: Insight[] = [
         readTime: "9 Min Read",
         markdownFile: "public/comprehensive-guide.md"
     }
-];
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

@@ -56,4 +56,4 @@ export const caseStudies: CaseStudy[] = [
         slug: "oracle-ebs-to-odoo-migration",
         markdownFile: "public/oracle-odoo-md"
     }
-];
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
