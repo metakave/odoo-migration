@@ -2,25 +2,35 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import ThemeSwitcher from "./ThemeSwitcher";
 import styles from "./Header.module.css";
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isDarkHeroPage = pathname === '/' || 
+                           pathname === '/contact' || 
+                           (pathname.startsWith('/insights/') && pathname !== '/insights') || 
+                           (pathname.startsWith('/case-studies/') && pathname !== '/case-studies');
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
+        handleScroll(); // Trigger initial check
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+    const headerClass = `${styles.header} ${isScrolled || !isDarkHeroPage ? styles.headerScrolled : ""}`;
+
     return (
-        <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
+        <header className={headerClass}>
             <div className={styles.headerInner}>
                 <Link href="/" className={styles.headerLogo}>
                     Odoo <span className={styles.headerLogoAccent}>Upgrade Service</span>
