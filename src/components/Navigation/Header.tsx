@@ -40,6 +40,7 @@ export default function Header() {
                     <Link href="/#services" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Services</Link>
                     <Link href="/#process" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Process</Link>
                     <Link href="/case-studies" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Case Studies</Link>
+                    <Link href="/insights" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>Insights</Link>
                     <Link href="/faq" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>FAQ</Link>
                     <div className={styles.headerActions}>
                         <ThemeSwitcher />

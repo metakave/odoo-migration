@@ -13,6 +13,7 @@ export default function Footer() {
                     <nav className={styles.footerNav}>
                         <Link href="/" className={styles.footerLink}>Home</Link>
                         <Link href="/case-studies" className={styles.footerLink}>Case Studies</Link>
+                        <Link href="/insights" className={styles.footerLink}>Insights</Link>
                         <Link href="/faq" className={styles.footerLink}>FAQ</Link>
                     </nav>
 
