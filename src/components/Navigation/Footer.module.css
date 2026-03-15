@@ -19,6 +19,13 @@
     color: #fff;
 }
 
+.footerBrandAccent {
+    background: linear-gradient(135deg, #c4b5fd, #a5f3fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 .footerCopy {
     font-size: 0.8125rem;
 }

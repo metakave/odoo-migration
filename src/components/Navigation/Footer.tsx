@@ -6,7 +6,9 @@ export default function Footer() {
         <footer className={styles.footer}>
             <div className="container">
                 <div className={styles.footerInner}>
-                    <div className={styles.footerBrand}>Odoo Upgrade Service</div>
+                    <div className={styles.footerBrand}>
+                        Odoo <span className={styles.footerBrandAccent}>Upgrade Service</span>
+                    </div>
                     
                     <nav className={styles.footerNav}>
                         <Link href="/" className={styles.footerLink}>Home</Link>
