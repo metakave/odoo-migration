@@ -25,11 +25,7 @@ export default function VantaGlobe() {
             minHeight: 200.00,
             minWidth: 200.00,
             scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x8b5cf6, // --primary-500
-            color2: 0x10b981, // --accent-emerald
-            size: 1.10,
-            backgroundColor: 0x0f172a // --neutral-900 (darker blue/black)
+            scaleMobile: 1.00
           });
           setVantaEffect(effect);
         } catch (err) {
