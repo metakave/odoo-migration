@@ -116,7 +116,7 @@
     display: block;
     width: 24px;
     height: 2px;
-    background: currentColor; /* Inherits from .header or .headerScrolled */
+    background: #cbd5e1; /* Light gray for visibility */
     border-radius: 2px;
     transition: all var(--transition-fast);
 }

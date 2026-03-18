@@ -38,24 +38,6 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" data-theme="dark">
-            <head>
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
-                            (function() {
-                                try {
-                                    var savedTheme = localStorage.getItem('theme');
-                                    if (savedTheme) {
-                                        document.documentElement.setAttribute('data-theme', savedTheme);
-                                    } else {
-                                        document.documentElement.setAttribute('data-theme', 'dark');
-                                    }
-                                } catch (e) {}
-                            })();
-                        `,
-                    }}
-                />
-            </head>
             <body>
                 <Header />
                 {children}
