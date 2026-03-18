@@ -46,6 +46,7 @@ export default function RootLayout({
                 <Script src="/three.r134.min.js" strategy="beforeInteractive" />
                 <Script src="/vanta.globe.min.js" strategy="beforeInteractive" />
                 <Script src="/vanta.dots.min.js" strategy="beforeInteractive" />
+                <Script src="/vanta.clouds2.min.js" strategy="beforeInteractive" />
             </body>
         </html>
     );
