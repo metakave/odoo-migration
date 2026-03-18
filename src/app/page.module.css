@@ -1,10 +1,11 @@
 .hero {
     position: relative;
-    background: #0f172a; /* Solid dark background for Vanta */
+    background: transparent; /* Changed to transparent so Vanta is visible */
     min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
+    z-index: 1; /* Stacking context */
 }
 
 /* Overlays removed to show Vanta Globe */
@@ -15,7 +16,7 @@
 
 .heroContent {
     position: relative;
-    z-index: 1;
+    z-index: 10; /* Higher than VantaGlobe */
     max-width: 800px;
     color: #fff;
     padding: var(--space-4xl) 0;
@@ -511,7 +512,7 @@
 
 /* --- CTA SECTION --- */
 .ctaSection {
-    background: var(--gradient-hero);
+    background: transparent;
     padding: var(--space-4xl) 0;
     text-align: center;
     position: relative;
@@ -519,12 +520,7 @@
 }
 
 .ctaSection::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-        radial-gradient(ellipse 60% 50% at 30% 100%, rgba(168, 85, 247, 0.3), transparent),
-        radial-gradient(ellipse 50% 40% at 70% 0%, rgba(79, 70, 229, 0.25), transparent);
+    display: none;
 }
 
 .ctaContent {

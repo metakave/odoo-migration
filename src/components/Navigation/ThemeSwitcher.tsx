@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.css";
 
 export default function ThemeSwitcher() {
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+    const [theme, setTheme] = useState<"light" | "dark">("dark");
 
     useEffect(() => {
         const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
         if (savedTheme) {
             setTheme(savedTheme);
             document.documentElement.setAttribute("data-theme", savedTheme);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        } else {
+            // Default to dark
             setTheme("dark");
             document.documentElement.setAttribute("data-theme", "dark");
         }

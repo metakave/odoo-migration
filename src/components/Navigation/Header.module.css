@@ -24,6 +24,16 @@
 }
 
 .headerActions {
+    display: none; /* Hidden by default in desktop nav, moved to separate container */
+    align-items: center;
+    gap: var(--space-md);
+    width: 100%;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.headerDesktopActions {
     display: flex;
     align-items: center;
     gap: var(--space-md);
@@ -133,5 +143,32 @@
 
     .headerNavOpen {
         display: flex;
+    }
+
+    .headerNav .headerLink {
+        font-size: 1.125rem;
+        padding: var(--space-xs) 0;
+        background: linear-gradient(135deg, #c4b5fd, #a5f3fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        opacity: 1;
+    }
+
+    .headerActions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .headerDesktopActions {
+        display: none;
+    }
+
+    .headerCta {
+        width: 100%;
+        justify-content: center;
+        padding: 0.75rem;
     }
 }

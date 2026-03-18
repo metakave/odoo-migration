@@ -37,7 +37,25 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
+        <html lang="en" data-theme="dark">
+            <head>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function() {
+                                try {
+                                    var savedTheme = localStorage.getItem('theme');
+                                    if (savedTheme) {
+                                        document.documentElement.setAttribute('data-theme', savedTheme);
+                                    } else {
+                                        document.documentElement.setAttribute('data-theme', 'dark');
+                                    }
+                                } catch (e) {}
+                            })();
+                        `,
+                    }}
+                />
+            </head>
             <body>
                 <Header />
                 {children}
@@ -45,6 +63,7 @@ export default function RootLayout({
                 <Footer />
                 <Script src="/three.r134.min.js" strategy="beforeInteractive" />
                 <Script src="/vanta.globe.min.js" strategy="beforeInteractive" />
+                <Script src="/vanta.dots.min.js" strategy="beforeInteractive" />
             </body>
         </html>
     );

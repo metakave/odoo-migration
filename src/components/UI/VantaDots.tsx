@@ -9,38 +9,42 @@ declare global {
   }
 }
 
-export default function VantaGlobe() {
+export default function VantaDots() {
   const vantaRef = useRef<HTMLDivElement>(null);
   const [vantaEffect, setVantaEffect] = useState<any>(null);
 
   useEffect(() => {
     const initVanta = () => {
-      if (!vantaEffect && window.VANTA && window.VANTA.GLOBE && vantaRef.current) {
+      if (!vantaEffect && window.VANTA && window.VANTA.DOTS && vantaRef.current) {
         try {
-          const effect = window.VANTA.GLOBE({
+          const effect = window.VANTA.DOTS({
             el: vantaRef.current,
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
             minHeight: 200.00,
+            minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            backgroundColor: 0x0f172a
+            color: 0x8b5cf6, // --primary-500
+            color2: 0x10b981, // --accent-emerald
+            backgroundColor: 0x0f172a, // Matches Dark Theme Background
+            size: 3.00,
+            spacing: 35.00,
+            showLines: false
           });
-          console.log("Vanta Globe initialized successfully");
           setVantaEffect(effect);
         } catch (err) {
-          console.error("Vanta initialization failed:", err);
+          console.error("Vanta Dots initialization failed:", err);
         }
       }
     };
 
-    // Check if scripts are already loaded, otherwise wait or set a small timeout
-    if (window.VANTA && window.VANTA.GLOBE) {
+    if (window.VANTA && window.VANTA.DOTS) {
       initVanta();
     } else {
       const interval = setInterval(() => {
-        if (window.VANTA && window.VANTA.GLOBE) {
+        if (window.VANTA && window.VANTA.DOTS) {
           initVanta();
           clearInterval(interval);
         }
@@ -63,7 +67,6 @@ export default function VantaGlobe() {
         width: '100%',
         height: '100%',
         zIndex: 0,
-        opacity: 1
       }} 
     />
   );

@@ -54,9 +54,13 @@ export default function Header() {
                     <Link href="/faq" className={styles.headerLink} onClick={() => setIsMenuOpen(false)}>FAQ</Link>
                     <div className={styles.headerActions}>
                         <ThemeSwitcher />
-                        <Link href="/#contact" className={styles.headerCta} onClick={() => setIsMenuOpen(false)}>Free Assessment</Link>
+                        <Link href="/contact" className={styles.headerCta} onClick={() => setIsMenuOpen(false)}>Free Assessment</Link>
                     </div>
                 </nav>
+                <div className={styles.headerDesktopActions}>
+                    <ThemeSwitcher />
+                    <Link href="/contact" className={styles.headerCta}>Free Assessment</Link>
+                </div>
             </div>
         </header>
     );
