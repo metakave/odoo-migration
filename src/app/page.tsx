@@ -86,7 +86,7 @@ export default function HomePage() {
                             <div>
                                 <div className={styles.heroStatValue}>200+</div>
                                 <div className={styles.heroStatLabel}>
-                                    Successful Migrations
+                                    Successful Odoo Projects
                                 </div>
                             </div>
                             <div>
