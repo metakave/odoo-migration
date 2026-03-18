@@ -23,9 +23,9 @@ export default function VantaGlobe() {
             touchControls: true,
             gyroControls: false,
             minHeight: 200.00,
-            minWidth: 200.00,
             scale: 1.00,
-            scaleMobile: 1.00
+            scaleMobile: 1.00,
+            backgroundColor: 0x0f172a
           });
           setVantaEffect(effect);
         } catch (err) {
@@ -62,7 +62,7 @@ export default function VantaGlobe() {
         width: '100%',
         height: '100%',
         zIndex: -1,
-        opacity: 0.6
+        opacity: 1
       }} 
     />
   );
