@@ -302,18 +302,19 @@ input, textarea, select {
 }
 
 .btn-white {
-  background: #fff;
-  color: var(--primary-700);
-  box-shadow: var(--shadow-main);
+    background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
 }
 [data-theme='dark'] .btn-white {
-  background: var(--neutral-800);
-  color: #fff;
+    background: linear-gradient(135deg, #c4b5fd, #7c3aed);
+    color: #fff;
 }
 
 .btn-white:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+    background: linear-gradient(135deg, #a78bfa, #6d28d9);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.55);
+    transform: translateY(-2px);
 }
 
 .btn-lg {
