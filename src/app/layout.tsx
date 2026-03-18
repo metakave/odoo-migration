@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Navigation/Header";
 import Footer from "@/components/Navigation/Footer";
+import Script from "next/script";
 import WhatsAppWidget from "@/components/UI/WhatsAppWidget";
 import "./globals.css";
 
@@ -42,6 +43,8 @@ export default function RootLayout({
                 {children}
                 <WhatsAppWidget />
                 <Footer />
+                <Script src="/three.r134.min.js" strategy="beforeInteractive" />
+                <Script src="/vanta.globe.min.js" strategy="beforeInteractive" />
             </body>
         </html>
     );

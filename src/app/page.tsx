@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import HeroCanvas from "@/components/UI/HeroCanvas";
+import VantaGlobe from "@/components/UI/VantaGlobe";
 import styles from "./page.module.css";
 
 const faqs = [
@@ -58,6 +59,7 @@ export default function HomePage() {
 
             {/* ============ HERO ============ */}
             <section className={styles.hero} id="hero">
+                <VantaGlobe />
                 <HeroCanvas />
                 <div className={styles.heroOrb + " " + styles.heroOrb1} />
                 <div className={styles.heroOrb + " " + styles.heroOrb2} />
