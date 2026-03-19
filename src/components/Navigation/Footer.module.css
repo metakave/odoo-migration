@@ -4,6 +4,16 @@
     padding: var(--space-4xl) 0 calc(var(--space-2xl) + 100px);
 }
 
+.vantaWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
 .footerContent {
     position: relative;
     z-index: 10;
@@ -136,6 +146,16 @@
     .footerGrid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--space-2xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .vantaWrapper {
+        display: none;
+    }
+
+    .footer {
+        background: linear-gradient(to bottom, #334d80, #5ca6ca);
     }
 }
 

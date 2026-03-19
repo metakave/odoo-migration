@@ -14,6 +14,10 @@ export default function VantaClouds2() {
   const [vantaEffect, setVantaEffect] = useState<any>(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      return;
+    }
+
     const initVanta = () => {
       if (!vantaEffect && window.VANTA && window.VANTA.CLOUDS2 && vantaRef.current) {
         try {
