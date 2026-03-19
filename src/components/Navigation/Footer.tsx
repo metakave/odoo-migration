@@ -46,9 +46,9 @@ export default function Footer() {
                     <div className={styles.footerCol}>
                         <h4 className={styles.footerColTitle}>Get in Touch</h4>
                         <div className={styles.footerContactList}>
-                            <a href="mailto:hello@odooupgradeservice.com" className={styles.footerContactItem}>
+                            <a href="mailto:hello@sadiqalam.com" className={styles.footerContactItem}>
                                 <span className={styles.footerContactIcon}>✉</span>
-                                hello@odooupgradeservice.com
+                                Email
                             </a>
                             <a href="https://wa.me/8801924572887" target="_blank" rel="noopener noreferrer" className={styles.footerContactItem}>
                                 <span className={styles.footerContactIcon}>💬</span>
