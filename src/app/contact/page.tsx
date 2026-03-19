@@ -47,8 +47,8 @@ export default function ContactPage() {
                         
                         <div className={styles.infoBlock}>
                             <h3>✉️ Email inquiries</h3>
-                            <a href="mailto:hello@odooupgradeservice.com">
-                                hello@odooupgradeservice.com
+                            <a href="mailto:hello@sadiqalam.com">
+                                hello@sadiqalam.com
                             </a>
                         </div>
                     </div>
