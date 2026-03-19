@@ -130,7 +130,7 @@
 
 .footerCopy {
     font-size: 0.8125rem;
-    color: #4b5563; /* Dark grey */
+    color: #333333; /* Dark grey */
 }
 
 /* Responsive */
@@ -142,6 +142,13 @@
 }
 
 @media (max-width: 768px) {
+    .vantaWrapper {
+        display: none;
+    }
+
+    .footer {
+        background: linear-gradient(to bottom, #112240, #334d80);
+    }
 }
 
 @media (max-width: 640px) {
