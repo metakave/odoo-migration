@@ -55,7 +55,7 @@ export default function Footer() {
                                 WhatsApp
                             </a>
                             <Link href="/contact" className={styles.footerCtaBtn}>
-                                Request Free Assessment →
+                                Free Assessment
                             </Link>
                         </div>
                     </div>
