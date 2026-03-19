@@ -1,15 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import VantaClouds2 from "@/components/UI/VantaClouds2";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            <div className={styles.vantaWrapper}>
-                <VantaClouds2 />
-            </div>
             <div className={`container ${styles.footerContent}`}>
                 <div className={styles.footerGrid}>
                     {/* Column 1: Brand & About */}
