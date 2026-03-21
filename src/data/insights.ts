@@ -3,6 +3,9 @@ export interface Insight {
     title: string;
     slug: string;
     summary: string;
+    metaTitle?: string;
+    metaDescription?: string;
+    faqSchema?: { question: string; answer: string }[];
     content?: string;
     date: string;
     author: string;
@@ -75,11 +78,35 @@ export const insights: Insight[] = [
         title: "Odoo Version Support Policy & Impact on User License Pricing (2026)",
         slug: "odoo-version-support-policy-2026",
         summary: "Starting in July 2025, Odoo changed its terms to support all versions indefinitely, but older versions face a 25% Legacy Support Surcharge. Learn how this impacts your business.",
+        metaTitle: "Odoo Version Support Policy 2026: Avoiding the 25% Legacy Surcharge",
+        metaDescription: "Odoo now supports all legacy versions indefinitely but adds a 25% surcharge for versions older than the latest three releases. Find out how the 2026 policy protects your system while impacting your license pricing.",
         date: "22 Mar 2026",
         author: "Strategy & Policy Team",
         category: "Policy & Pricing",
         image: "/images/insights/update-markus-winkler-qPjV8XaXPTQ-unsplash.jpg",
         readTime: "5 Min Read",
-        markdownFile: "public/version-policy.md"
+        markdownFile: "public/version-policy.md",
+        faqSchema: [
+            {
+                question: 'Does Odoo still have "End of Life" (EOL) versions?',
+                answer: 'No, technically all Enterprise versions are now supported, provided you pay the surcharge.'
+            },
+            {
+                question: 'What is the "Legacy Surcharge"?',
+                answer: 'A 25% additional fee on your annual subscription for using a version older than the three most recent ones.'
+            },
+            {
+                question: 'When do I start paying the 25% fee?',
+                answer: 'On your first renewal after April 2026 if you are on Odoo 16 or older.'
+            },
+            {
+                question: 'Can I avoid the fee by upgrading?',
+                answer: 'Yes. If you upgrade to v17, v18, or v19 before your renewal, the fee is waived.'
+            },
+            {
+                question: 'Does this apply to Odoo Community?',
+                answer: 'No. Community is free, but it receives zero official bug fixes or security patches from Odoo SA.'
+            }
+        ]
     }
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

@@ -104,6 +104,26 @@ export default async function InsightDetail({ params }: { params: { slug: string
                     <InsightCTA />
                 </div>
             </div>
+
+            {post.faqSchema && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            mainEntity: post.faqSchema.map(faq => ({
+                                "@type": "Question",
+                                name: faq.question,
+                                acceptedAnswer: {
+                                    "@type": "Answer",
+                                    text: faq.answer
+                                }
+                            }))
+                        })
+                    }}
+                />
+            )}
         </main>
     );
 }
@@ -112,8 +132,23 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     const post = insights.find((p) => p.slug === params.slug);
     if (!post) return {};
 
+    const title = post.metaTitle || `${post.title} | Insights | Odoo Upgrade Service`;
+    const description = post.metaDescription || post.summary;
+
     return {
-        title: `${post.title} | Insights | Odoo Upgrade Service`,
-        description: post.summary,
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            type: "article",
+            images: post.image ? [post.image] : [],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: post.image ? [post.image] : [],
+        }
     };
 }
