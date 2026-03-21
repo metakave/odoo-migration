@@ -549,7 +549,7 @@
 
 /* --- LEAD CAPTURE FORM --- */
 .leadForm {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-2xl);
