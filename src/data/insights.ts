@@ -69,5 +69,17 @@ export const insights: Insight[] = [
         image: "/images/insights/odoo-feature.webp",
         readTime: "8 Min Read",
         markdownFile: "public/odoo-17to19.md"
+    },
+    {
+        id: "6",
+        title: "Odoo Version Support Policy & Impact on User License Pricing (2026)",
+        slug: "odoo-version-support-policy-2026",
+        summary: "Starting in July 2025, Odoo changed its terms to support all versions indefinitely, but older versions face a 25% Legacy Support Surcharge. Learn how this impacts your business.",
+        date: "22 Mar 2026",
+        author: "Strategy & Policy Team",
+        category: "Policy & Pricing",
+        image: "/images/insights/update-markus-winkler-qPjV8XaXPTQ-unsplash.jpg",
+        readTime: "5 Min Read",
+        markdownFile: "public/version-policy.md"
     }
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
