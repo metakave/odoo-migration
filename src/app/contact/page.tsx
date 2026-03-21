@@ -10,11 +10,36 @@ export default function ContactPage() {
         e.preventDefault();
         setStatus("loading");
         
-        // Simulate API call
-        setTimeout(() => {
-            setStatus("success");
-            (e.target as HTMLFormElement).reset();
-        }, 1500);
+        const formElement = e.target as HTMLFormElement;
+        
+        try {
+            const body = {
+                formType: 'contact',
+                name: (formElement.querySelector('#name') as HTMLInputElement).value,
+                email: (formElement.querySelector('#email') as HTMLInputElement).value,
+                currentVersion: (formElement.querySelector('#currentVersion') as HTMLSelectElement).value,
+                targetVersion: (formElement.querySelector('#targetVersion') as HTMLSelectElement).value,
+                edition: (formElement.querySelector('#edition') as HTMLSelectElement).value,
+                timeline: (formElement.querySelector('#timeline') as HTMLSelectElement).value,
+                message: (formElement.querySelector('#message') as HTMLTextAreaElement).value,
+            };
+
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+
+            if (res.ok) {
+                setStatus("success");
+                formElement.reset();
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+        }
     };
 
     return (

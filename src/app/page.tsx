@@ -31,6 +31,40 @@ const faqs = [
 
 export default function HomePage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [leadStatus, setLeadStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setLeadStatus("loading");
+        
+        const formElement = e.target as HTMLFormElement;
+        
+        try {
+            const body = {
+                formType: 'lead',
+                name: (formElement.querySelector('#lead-name') as HTMLInputElement).value,
+                email: (formElement.querySelector('#lead-email') as HTMLInputElement).value,
+                phone: (formElement.querySelector('#lead-phone') as HTMLInputElement).value,
+                migrationType: (formElement.querySelector('#lead-migration-type') as HTMLSelectElement).value,
+            };
+
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+
+            if (res.ok) {
+                setLeadStatus("success");
+                formElement.reset();
+            } else {
+                setLeadStatus("error");
+            }
+        } catch (error) {
+            console.error(error);
+            setLeadStatus("error");
+        }
+    };
 
     return (
         <>
@@ -354,7 +388,7 @@ export default function HomePage() {
                         Get a free, no-obligation migration audit. Our experts will
                         analyze your current setup and provide a detailed roadmap.
                     </p>
-                    <div className={styles.leadForm}>
+                    <form className={styles.leadForm} onSubmit={handleLeadSubmit}>
                         <div className={styles.leadFormTitle}>
                             Request a Free Migration Audit
                         </div>
@@ -363,6 +397,7 @@ export default function HomePage() {
                             className={styles.leadFormInput}
                             placeholder="Full Name"
                             id="lead-name"
+                            required
                             aria-label="Full Name"
                         />
                         <input
@@ -370,6 +405,7 @@ export default function HomePage() {
                             className={styles.leadFormInput}
                             placeholder="Work Email"
                             id="lead-email"
+                            required
                             aria-label="Work Email"
                         />
                         <input
@@ -377,11 +413,13 @@ export default function HomePage() {
                             className={styles.leadFormInput}
                             placeholder="Phone Number"
                             id="lead-phone"
+                            required
                             aria-label="Phone Number"
                         />
                         <select
                             className={styles.leadFormSelect}
                             id="lead-migration-type"
+                            required
                             aria-label="Migration Type"
                             defaultValue=""
                         >
@@ -397,13 +435,30 @@ export default function HomePage() {
                             </option>
                             <option value="not-sure">Not Sure Yet</option>
                         </select>
-                        <button className={styles.leadFormBtn} type="button" id="lead-submit">
-                            Request Free Migration Audit →
+                        <button 
+                            className={styles.leadFormBtn} 
+                            type="submit" 
+                            id="lead-submit"
+                            disabled={leadStatus === "loading"}
+                        >
+                            {leadStatus === "loading" ? "Sending Request..." : "Request Free Migration Audit →"}
                         </button>
+                        
+                        {leadStatus === "success" && (
+                            <p style={{ color: "var(--accent-emerald)", marginTop: "1rem", textAlign: "center", fontSize: "0.875rem", fontWeight: "600" }}>
+                                Thanks! Your request has been sent.
+                            </p>
+                        )}
+                        {leadStatus === "error" && (
+                            <p style={{ color: "#ef4444", marginTop: "1rem", textAlign: "center", fontSize: "0.875rem", fontWeight: "600" }}>
+                                Error sending request. Please try again.
+                            </p>
+                        )}
+
                         <p className={styles.leadFormTrust}>
                             🔒 Your information is secure. We never share your data.
                         </p>
-                    </div>
+                    </form>
                 </div>
             </section>
 
