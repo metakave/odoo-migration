@@ -43,42 +43,63 @@ Founder Announcement (Fabien Pinckaers): Detailed the shift from EOL to Perpetua
 Odoo.sh Lifecycle Policy: Lists the 6-year hosting limit for individual versions on the .sh platform.
 
 ## 20-Point FAQ: What Odoo Users Should Know
-Does Odoo still have "End of Life" (EOL) versions? No, technically all Enterprise versions are now supported, provided you pay the surcharge.
 
-What is the "Legacy Surcharge"? A 25% additional fee on your annual subscription for using a version older than the three most recent ones.
+**Does Odoo still have "End of Life" (EOL) versions?**  
+No, technically all Enterprise versions are now supported, provided you pay the surcharge.
 
-Which versions are currently "Covered" (No extra fee)? Odoo 17, 18, and 19.
+**What is the "Legacy Surcharge"?**  
+A 25% additional fee on your annual subscription for using a version older than the three most recent ones.
 
-When do I start paying the 25% fee? On your first renewal after April 2026 if you are on Odoo 16 or older.
+**Which versions are currently "Covered" (No extra fee)?**  
+Odoo 17, 18, and 19.
 
-Can I avoid the fee by upgrading? Yes. If you upgrade to v17, v18, or v19 before your renewal, the fee is waived.
+**When do I start paying the 25% fee?**  
+On your first renewal after April 2026 if you are on Odoo 16 or older.
 
-Does this apply to Odoo Community? No. Community is free, but it receives zero official bug fixes or security patches from Odoo SA.
+**Can I avoid the fee by upgrading?**  
+Yes. If you upgrade to v17, v18, or v19 before your renewal, the fee is waived.
 
-What if I am mid-migration in April 2026? You should contact your Account Manager; Odoo may grant a 1-2 month waiver if proof of an active migration is provided.
+**Does this apply to Odoo Community?**  
+No. Community is free, but it receives zero official bug fixes or security patches from Odoo SA.
 
-Is Odoo 16 still supported? Yes, but as a "Legacy Version" requiring the surcharge.
+**What if I am mid-migration in April 2026?**  
+You should contact your Account Manager; Odoo may grant a 1-2 month waiver if proof of an active migration is provided.
 
-What happens to Odoo 14 on Odoo.sh in October 2026? It will be blocked from production use. You must move to a newer version or move to On-Premise.
+**Is Odoo 16 still supported?**  
+Yes, but as a "Legacy Version" requiring the surcharge.
 
-Why did Odoo make this change? To fund the maintenance of security patches for very old codebases while allowing businesses more time to upgrade.
+**What happens to Odoo 14 on Odoo.sh in October 2026?**  
+It will be blocked from production use. You must move to a newer version or move to On-Premise.
 
-Does the fee apply to Monthly subscriptions? Yes, the monthly rate will increase by 25%.
+**Why did Odoo make this change?**  
+To fund the maintenance of security patches for very old codebases while allowing businesses more time to upgrade.
 
-Is there a surcharge for Odoo Online users? No. Upgrades are automatic and included in the base price.
+**Does the fee apply to Monthly subscriptions?**  
+Yes, the monthly rate will increase by 25%.
 
-Will Odoo still fix bugs in Version 12? Yes, if reported by an Enterprise customer paying the surcharge.
+**Is there a surcharge for Odoo Online users?**  
+No. Upgrades are automatic and included in the base price.
 
-What about custom modules? The surcharge covers Odoo standard code. Support for your custom modules remains your responsibility or your partner's.
+**Will Odoo still fix bugs in Version 12?**  
+Yes, if reported by an Enterprise customer paying the surcharge.
 
-Is the 25% fee one-time? No, it is recurring annually until you upgrade to a covered version.
+**What about custom modules?**  
+The surcharge covers Odoo standard code. Support for your custom modules remains your responsibility or your partner's.
 
-Does this affect the "One App Free" plan? No, as that plan is only available on Odoo Online, which is exempt.
+**Is the 25% fee one-time?**  
+No, it is recurring annually until you upgrade to a covered version.
 
-What version should I upgrade to now? Odoo 19 is recommended for the longest support runway.
+**Does this affect the "One App Free" plan?**  
+No, as that plan is only available on Odoo Online, which is exempt.
 
-Can I stay on a legacy version forever? Theoretically yes on-premise, but third-party integrations (banks, carriers) may eventually break due to API changes.
+**What version should I upgrade to now?**  
+Odoo 19 is recommended for the longest support runway.
 
-Does the 25% fee apply to the hosting cost of Odoo.sh? No, it only applies to the user license portion of the subscription.
+**Can I stay on a legacy version forever?**  
+Theoretically yes on-premise, but third-party integrations (banks, carriers) may eventually break due to API changes.
 
-Is there a "grace version"? Currently, Odoo 17 is the oldest "Covered Version." When Odoo 20 is released (expected late 2026), Odoo 17 will become "Legacy."
+**Does the 25% fee apply to the hosting cost of Odoo.sh?**  
+No, it only applies to the user license portion of the subscription.
+
+**Is there a "grace version"?**  
+Currently, Odoo 17 is the oldest "Covered Version." When Odoo 20 is released (expected late 2026), Odoo 17 will become "Legacy."
