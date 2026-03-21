@@ -36,11 +36,11 @@ Odoo Online (SaaS): Exempt. Users are automatically upgraded to the latest versi
 Odoo.sh & On-Premise: Affected. These users must manually initiate upgrades. If they choose to stay on a version older than v17, the 25% fee applies.
 
 ## Official Reference Summary
-Odoo Enterprise Subscription Agreement (Updated July 2025): Section on "Maintenance of Older Versions" defines the 25% surcharge.
+<a href="https://www.odoo.com/documentation/master/legal/terms/enterprise.html" target="_blank" rel="noopener noreferrer">Odoo Enterprise Subscription Agreement (Updated July 2025)</a>: Section on "Maintenance of Older Versions" defines the 25% surcharge.
 
-Founder Announcement (Fabien Pinckaers): Detailed the shift from EOL to Perpetual Support to reduce the "pressure of forced upgrades."
+<a href="https://x.com/fpodoo" target="_blank" rel="noopener noreferrer">Founder Announcement (Fabien Pinckaers)</a>: Detailed the shift from EOL to Perpetual Support to reduce the "pressure of forced upgrades."
 
-Odoo.sh Lifecycle Policy: Lists the 6-year hosting limit for individual versions on the .sh platform.
+<a href="https://www.odoo.sh/faq" target="_blank" rel="noopener noreferrer">Odoo.sh Lifecycle Policy</a>: Lists the 6-year hosting limit for individual versions on the .sh platform.
 
 ## 20-Point FAQ: What Odoo Users Should Know
 
