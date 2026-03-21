@@ -377,10 +377,10 @@
 /* --- TESTIMONIALS --- */
 .testimonials {
     padding: var(--space-4xl) 0;
-    background: linear-gradient(to bottom, #020617, #080a1a);
+    background: var(--bg-surface);
     position: relative;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 .testimonialGrid {
@@ -454,7 +454,7 @@
 
 /* --- FAQ --- */
 .faq {
-    background: var(--bg-surface);
+    background: var(--bg-page);
     padding: var(--space-4xl) 0;
 }
 
@@ -677,6 +677,7 @@
 /* --- WARNING SECTION --- */
 .warningSection {
     padding: var(--space-4xl) 0;
+    background: var(--bg-page);
 }
 
 .warningBox {
