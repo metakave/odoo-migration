@@ -116,10 +116,10 @@ export default function HomePage() {
                             running without missing a beat.
                         </p>
                         <div className={styles.heroCtas}>
-                            <a href="#contact" className="btn btn-white btn-lg">
+                            <Link href="/contact" className="btn btn-white btn-lg">
                                 Request a Free Migration Audit
                                 <span className="btn-icon">→</span>
-                            </a>
+                            </Link>
                         </div>
                         <div className={styles.heroStats}>
                             <div>
@@ -219,9 +219,9 @@ export default function HomePage() {
                         <p style={{ maxWidth: '800px', margin: '0 auto var(--space-xl)', fontSize: '1.125rem', color: 'var(--neutral-600)' }}>
                             As an official Odoo Partner with over two decades of IT experience, we have successfully guided businesses through complex database upgrades and custom module refactors.
                         </p>
-                        <a href="#contact" className="btn btn-primary">
+                        <Link href="/contact" className="btn btn-primary">
                             Request a Free Migration Audit
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
