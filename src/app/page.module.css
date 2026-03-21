@@ -132,19 +132,7 @@
     padding: var(--space-4xl) 0;
 }
 
-.painSectionTitle {
-    background: linear-gradient(135deg, var(--primary-700), var(--primary-500));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-[data-theme='dark'] .painSectionTitle {
-    background: linear-gradient(135deg, var(--primary-300), var(--primary-400));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
+/* .painSectionTitle removed to inherit from global .section-title */
 
 .painGrid {
     display: grid;
@@ -537,8 +525,11 @@
 .ctaTitle {
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 800;
-    color: #fff;
     margin-bottom: var(--space-md);
+    background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .ctaSubtitle {
