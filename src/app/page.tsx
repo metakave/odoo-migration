@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import VantaGlobe from "@/components/UI/VantaGlobe";
-import VantaDots from "@/components/UI/VantaDots";
+import dynamic from "next/dynamic";
+
+const VantaGlobe = dynamic(() => import("@/components/UI/VantaGlobe"), { ssr: false });
+const VantaDots = dynamic(() => import("@/components/UI/VantaDots"), { ssr: false });
 import styles from "./page.module.css";
 
 const faqs = [
