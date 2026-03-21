@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./contact.module.css";
 
 export default function ContactPage() {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -33,6 +35,7 @@ export default function ContactPage() {
             if (res.ok) {
                 setStatus("success");
                 formElement.reset();
+                router.push('/thank-you');
             } else {
                 setStatus("error");
             }

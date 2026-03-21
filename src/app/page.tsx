@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import VantaGlobe from "@/components/UI/VantaGlobe";
 import VantaDots from "@/components/UI/VantaDots";
@@ -32,6 +33,7 @@ const faqs = [
 export default function HomePage() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [leadStatus, setLeadStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const router = useRouter();
 
     const handleLeadSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -57,6 +59,7 @@ export default function HomePage() {
             if (res.ok) {
                 setLeadStatus("success");
                 formElement.reset();
+                router.push('/thank-you');
             } else {
                 setLeadStatus("error");
             }
