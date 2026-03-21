@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     padding: var(--space-4xl) 0 var(--space-2xl);
-    background: linear-gradient(to bottom, #334d80, #5ca6ca);
+    background: linear-gradient(to bottom, #0c2461, #2c2c54);
 }
 
 
@@ -144,10 +144,6 @@
 @media (max-width: 768px) {
     .vantaWrapper {
         display: none;
-    }
-
-    .footer {
-        background: linear-gradient(to bottom, #0c2461, #2c2c54);
     }
 }
 
